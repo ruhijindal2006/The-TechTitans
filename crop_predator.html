@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crop Predictor</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    input[type="number"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <h1 class="logo">AgroVia</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <h1>Enter Soil Details</h1>
+  <form action="/predict" method="POST">
+    Nitrogen: <input type="number" name="nitrogen" step="any"><br>
+    Phosphorus: <input type="number" name="phosphorus" step="any"><br>
+    Potassium: <input type="number" name="potassium" step="any"><br>
+    pH: <input type="number" name="ph" step="any"><br>
+    Moisture: <input type="number" name="moisture" step="any"><br>
+    <input type="submit" value="Predict Crop">
+  </form>
+  <script>
+    document.querySelector('a[href="#home"]').setAttribute('href', 'index.html');
+</script>
+</body>
+</html>

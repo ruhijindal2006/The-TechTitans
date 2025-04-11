@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy and Sell</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGFncmljdWx0dXJlfGVufDB8fDB8fHww'); /* Replace with a farm-themed image URL */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+        .buy-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .sell-button {
+            background-color: #f44336;
+            color: white;
+        }
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+        .sell-button:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <h1 class="logo">AgroVia</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div style="text-align: center; margin-top: 50px;">
+        <button class="button buy-button">Buy</button>
+        <button class="button sell-button">Sell</button>
+    </div>
+    <script>
+        document.querySelector('.sell-button').addEventListener('click', function() {
+            window.location.href = 'sell.html';
+        });
+    </script>
+    <script>
+        document.querySelector('.buy-button').addEventListener('click', function() {
+            window.location.href = 'buy.html';
+        });
+    </script>
+    <script>
+        document.querySelector('a[href="#home"]').setAttribute('href', 'index.html');
+    </script>
+</body>
+</html>

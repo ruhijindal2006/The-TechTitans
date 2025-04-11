@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Gradient Border Colors</title>
+  <style>
+    
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .card {
+      position: relative;
+      width: 300px;
+      padding: 20px;
+      background: #222;
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      z-index: -1;
+      border-radius: 23px;
+      background: conic-gradient(
+        from 0deg,
+        #ff6ec4,
+        #7873f5,
+        #4ade80,
+        #ff6ec4
+      );
+      animation: rotateColors 4s linear infinite;
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      padding: 3px;
+    }
+
+    @keyframes rotateColors {
+      0% {
+        background: conic-gradient(
+          from 0deg,
+          #ff6ec4,
+          #7873f5,
+          #4ade80,
+          #ff6ec4
+        );
+      }
+      100% {
+        background: conic-gradient(
+          from 360deg,
+          #ff6ec4,
+          #7873f5,
+          #4ade80,
+          #ff6ec4
+        );
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Color-Spinning Border</h2>
+  <p>Only the gradient colors move!</p>
+</div>
+<script></script>
+    document.querySelector('.card').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+</script>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
+</body>
+</html>

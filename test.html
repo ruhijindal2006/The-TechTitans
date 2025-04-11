@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Geolocation</title>
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            document.getElementById("lat").value = position.coords.latitude;
+            document.getElementById("lon").value = position.coords.longitude;
+          },
+          function(error) {
+            alert("Error getting location: " + error.message);
+          }
+        );
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Test My Location</h2>
+  <button onclick="getLocation()">📍 Use My Location</button><br><br>
+  <label>Latitude:</label>
+  <input type="text" id="lat"><br>
+  <label>Longitude:</label>
+  <input type="text" id="lon"><br>
+</body>
+</html>
